@@ -1,0 +1,58 @@
+el archivo .env debe tener este contenido:
+
+TABLA=estudiantes
+USER=postgres
+HOST=localhost
+PASSWORD=1234
+DATABASE=desafio2m7romijeandani
+PORT=5432
+
+const res = await pool.query({
+      text: "SELECT * FROM nombre_tabla WHERE id = $1",
+      values: [id]
+    });
+
+un json es un objeto
+
+objetivos: 
+que tabla sea generica
+(tener en cuenta que al gabriel le funcionaba sin el guion)
+argumentos por defecto
+
+que con 2 lineas funcione el switch de la ife
+
+ya listo:
+- parametrizadas PUNTO 2
+- la captura de errores ya esta PUNTO 3
+
+cambios: 
+-validacion por si falta una propiedad de conexion
+-archivo .env + dotenv instalado y requerido
+-modulo manejoErrores 
+-modulo manejoProcess
+-modulo conexion
+-rowMode en getEstudiantes PUNTO 4
+-consultas con json (objeto) como argumento de pool.query PUNTO 1
+
+
+
+QUE ES ESTO
+
+const { text } = require("stream/consumers");
+
+
+create database desafio2m7romijeandani;
+\c desafio2m7romijeandani;
+CREATE TABLE estudiantes (
+    rut VARCHAR(14) PRIMARY KEY,
+    nombre VARCHAR(25),
+    curso VARCHAR(25),
+    nivel INT
+);
+
+========================================================================
+
+que no deje editar si no hay ningun cambio?
+como se soluciono el problema del guion? por poner el rut en posicion [1]
+
+***Todo lo que llega por la consola igual que como en la ruta, llega como string ****
